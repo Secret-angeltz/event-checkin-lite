@@ -1,0 +1,10 @@
+# Local configuration with real database credentials
+config.php
+
+# Environment and editor files
+.env
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

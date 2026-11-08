@@ -1,0 +1,14 @@
+# Apache / cPanel rules
+
+Options -Indexes
+
+# Only index.php, assets/ and api/ are meant to be reachable from a browser.
+RedirectMatch 404 /(includes|database|bin|tests|docs)(/|$)
+RedirectMatch 404 /(config|config\.example)\.php$
+RedirectMatch 404 /\.git
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
